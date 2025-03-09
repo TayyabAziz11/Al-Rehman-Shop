@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Instagram } from "lucide-react";
+import Image from "next/image";
 
 const colors = {
   primary: "#1E1E1E", // Charcoal Black
@@ -58,7 +59,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <img src={member.image} alt={member.name} className="w-40 h-40 object-cover rounded-full mx-auto" />
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={160}
+                  height={160}
+                  className="w-40 h-40 object-cover rounded-full mx-auto"
+                />
                 <h3 className="text-xl font-semibold mt-4" style={{ color: colors.primary }}>{member.name}</h3>
                 <p className="text-sm mt-1" style={{ color: colors.accent }}>{member.role}</p>
                 <div className="flex justify-center mt-3 space-x-4">
@@ -82,7 +89,7 @@ export default function AboutPage() {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
                 <p className="text-lg italic" style={{ color: colors.primary }}>
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <h4 className="text-lg font-semibold mt-4" style={{ color: colors.primary }}>{testimonial.author}</h4>
                 <p className="text-sm" style={{ color: colors.accent }}>{testimonial.position}</p>

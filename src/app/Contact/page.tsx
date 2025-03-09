@@ -5,10 +5,15 @@ export default function ContactPage() {
     <div className="bg-white font-serif">
       {/* Hero Section */}
       <section className="relative py-20 bg-gray-200 text-center">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('/placeholder.svg?height=1080&width=1920')" }}></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: "url('/placeholder.svg?height=1080&width=1920')" }}
+        ></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-4 text-[#D4A373]">Contact Us</h1>
-          <p className="text-lg text-gray-800">We'd love to hear from you. Reach out with any questions or visit one of our stores.</p>
+          <p className="text-lg text-gray-800">
+            We&apos;d love to hear from you. Reach out with any questions or visit one of our stores.
+          </p>
         </div>
       </section>
 
@@ -37,7 +42,7 @@ export default function ContactPage() {
 
         {/* Contact Form */}
         <div>
-          <h2 className="text-3xl font-bold text-[#D4A373]  mb-6">Send Us a Message</h2>
+          <h2 className="text-3xl font-bold text-[#D4A373] mb-6">Send Us a Message</h2>
           <form className="space-y-6 text-lg">
             {[
               { id: "name", label: "Your Name", type: "text" },
@@ -46,14 +51,31 @@ export default function ContactPage() {
             ].map(({ id, label, type }) => (
               <div key={id}>
                 <label htmlFor={id} className="block font-medium mb-1">{label}</label>
-                <input type={type} id={id} name={id} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-gold focus:border-gold" required />
+                <input
+                  type={type}
+                  id={id}
+                  name={id}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
+                  required
+                />
               </div>
             ))}
             <div>
               <label htmlFor="message" className="block font-medium mb-1">Message</label>
-              <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-gold focus:border-gold" required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-gold focus:border-gold"
+                required
+              ></textarea>
             </div>
-            <button type="submit" className="w-full bg-gold text-white px-6 py-3 rounded-md text-lg font-bold hover:bg-opacity-80 transition">Send Message</button>
+            <button
+              type="submit"
+              className="w-full bg-gold text-white px-6 py-3 rounded-md text-lg font-bold hover:bg-opacity-80 transition"
+            >
+              Send Message
+            </button>
           </form>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import {
   Facebook,
   Instagram,
@@ -13,20 +14,6 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setTimeout(() => {
-        setSubscribed(false);
-        setEmail("");
-      }, 3000);
-    }
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -56,10 +43,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-[#D4A373]">Quick Links</h3>
             <ul className="space-y-2 text-lg">
-              <li><a href="/" className="text-gray-600 hover:text-[#D4A373]">Home</a></li>
-              <li><a href="/Shop" className="text-gray-600 hover:text-[#D4A373]">Shop</a></li>
-              <li><a href="/About" className="text-gray-600 hover:text-[#D4A373]">About Us</a></li>
-              <li><a href="/Contact" className="text-gray-600 hover:text-[#D4A373]">Contact</a></li>
+              <li><Link href="/" className="text-gray-600 hover:text-[#D4A373]">Home</Link></li>
+              <li><Link href="/Shop" className="text-gray-600 hover:text-[#D4A373]">Shop</Link></li>
+              <li><Link href="/About" className="text-gray-600 hover:text-[#D4A373]">About Us</Link></li>
+              <li><Link href="/Contact" className="text-gray-600 hover:text-[#D4A373]">Contact</Link></li>
             </ul>
           </div>
 
@@ -92,8 +79,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      
 
       {/* Footer Bottom Bar */}
       <div className="border-t border-gray-300 py-6">

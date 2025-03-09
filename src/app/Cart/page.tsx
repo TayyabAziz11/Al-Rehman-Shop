@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { useCart } from "@/app/Context/Cart-Context"
 import { ShoppingCart, Trash, Plus, Minus } from "lucide-react"
 
@@ -28,7 +29,7 @@ export default function CartPage() {
             Your cart is empty
           </h1>
           <p className="text-lg mb-8" style={{ color: colors.text }}>
-            Looks like you haven't added anything to your cart yet.
+            Looks like you haven&apos;t added anything to your cart yet.
           </p>
           <Link
             href="/Shop"
@@ -62,9 +63,11 @@ export default function CartPage() {
                     <li key={item.id} className="py-6 flex flex-col sm:flex-row">
                       {/* Product Image */}
                       <div className="flex-shrink-0 w-full sm:w-24 h-24 mb-4 sm:mb-0">
-                        <img
-                          src={item.image || "/placeholder.svg?height=96&width=96"}
+                        <Image
+                          src={item.image || "/placeholder.svg"}
                           alt={item.name}
+                          width={96}
+                          height={96}
                           className="w-full h-full object-cover rounded-md"
                         />
                       </div>
@@ -169,4 +172,3 @@ export default function CartPage() {
     </div>
   )
 }
-
