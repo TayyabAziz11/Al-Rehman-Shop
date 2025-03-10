@@ -45,7 +45,8 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-gray-900">Al Rehman</span>
+            <span className="text-2xl font-bold text-gray-900">Al <span className="text-[#D4A373]">Reman</span></span>
+
             </Link>
           </div>
 

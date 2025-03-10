@@ -1,7 +1,10 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { ShoppingCart, Heart, Star } from "lucide-react"
 import { useCart, type Product } from "../Context/Cart-Context"
 
@@ -11,9 +14,12 @@ const colors = {
   accent: "#D4A373", // Warm Beige/Gold
 }
 
+const USD_TO_PKR_RATE = 278.5 // Example conversion rate (1 USD = 278.5 PKR)
+
 export default function ProductSection() {
+  const router = useRouter()
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null)
-  const { addToCart } = useCart()
+  const { addToCart, cartItems } = useCart()
   const [addedToCart, setAddedToCart] = useState<number | null>(null)
 
   const products: Product[] = [
@@ -21,7 +27,7 @@ export default function ProductSection() {
       id: 1,
       name: "Classic Cotton T-Shirt",
       description: "Premium cotton essential tee for everyday comfort",
-      price: 29.99,
+      price: 10.99,
       rating: 4.8,
       category: "t-shirts",
       image: "/bg-image2.jpg",
@@ -37,7 +43,8 @@ export default function ProductSection() {
     },
   ]
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+    e.stopPropagation() // Prevent navigation when clicking the add to cart button
     addToCart(product)
     setAddedToCart(product.id)
     setTimeout(() => {
@@ -45,11 +52,29 @@ export default function ProductSection() {
     }, 1500)
   }
 
+  const navigateToProduct = (productId: number) => {
+    router.push(`/products/${productId}`)
+  }
+
+  // Check if product is in cart
+  const isInCart = (productId: number) => {
+    return cartItems.some((item) => item.id === productId)
+  }
+
+  // Get product quantity in cart
+  const getQuantityInCart = (productId: number) => {
+    const item = cartItems.find((item) => item.id === productId)
+    return item ? item.quantity || 0 : 0
+  }
+
   return (
     <section className="py-20" style={{ backgroundColor: colors.secondary }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold tracking-tight" style={{ color: colors.primary, fontFamily: "Playfair Display, serif" }}>
+          <h2
+            className="text-4xl font-bold tracking-tight"
+            style={{ color: colors.primary, fontFamily: "Playfair Display, serif" }}
+          >
             Our <span style={{ color: colors.accent }}>Collection</span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto mt-3" style={{ color: colors.primary, fontFamily: "Lora, serif" }}>
@@ -61,10 +86,11 @@ export default function ProductSection() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative"
+              className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative cursor-pointer"
               style={{ backgroundColor: "#fff" }}
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
+              onClick={() => navigateToProduct(product.id)}
             >
               <div className="relative overflow-hidden h-72 rounded-lg">
                 <Image
@@ -85,19 +111,27 @@ export default function ProductSection() {
                   }`}
                   style={{ bottom: hoveredProduct === product.id ? "20px" : "-50px" }}
                 >
-                  <button className="p-2 rounded-full shadow-md transition-all" style={{ backgroundColor: "#fff", color: colors.primary }}>
+                  <button
+                    className="p-2 rounded-full shadow-md transition-all"
+                    style={{ backgroundColor: "#fff", color: colors.primary }}
+                    onClick={(e) => e.stopPropagation()} // Prevent navigation when clicking the heart button
+                  >
                     <Heart size={20} />
                   </button>
                   <button
                     className="px-4 py-2 rounded-md shadow-md flex items-center transition-all cursor-pointer"
                     style={{
-                      backgroundColor: addedToCart === product.id ? "#4CAF50" : colors.accent,
+                      backgroundColor: addedToCart === product.id || isInCart(product.id) ? "#4CAF50" : colors.accent,
                       color: colors.primary,
                     }}
-                    onClick={() => handleAddToCart(product)}
+                    onClick={(e) => handleAddToCart(e, product)}
                   >
                     <ShoppingCart size={16} className="mr-1" />
-                    {addedToCart === product.id ? "Added!" : "Add to Cart"}
+                    {addedToCart === product.id
+                      ? "Added!"
+                      : isInCart(product.id)
+                        ? `In Cart (${getQuantityInCart(product.id)})`
+                        : "Add to Cart"}
                   </button>
                 </div>
               </div>
@@ -110,7 +144,7 @@ export default function ProductSection() {
                 </p>
                 <div className="flex justify-between items-center mt-4">
                   <span className="text-xl font-semibold" style={{ color: colors.accent }}>
-                    ${product.price}
+                    PKR {Math.round(product.price * USD_TO_PKR_RATE).toLocaleString()}
                   </span>
                   <div className="flex items-center">
                     <Star size={16} className="text-yellow-400" />
@@ -127,3 +161,4 @@ export default function ProductSection() {
     </section>
   )
 }
+
