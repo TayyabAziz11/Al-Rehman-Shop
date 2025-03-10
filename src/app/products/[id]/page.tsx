@@ -55,6 +55,42 @@ const getProductData = (id: number): Product | undefined => {
       category: "Cotton",
       image: "/product4.jpg",
     },
+    {
+      id: 5,
+      name: "Gul Ahmed Soft Cotton Unstitched Suit Men",
+      description: "Gul Ahmed Soft Cotton Unstitched fabric is designed to provide ultimate comfort and breathability for the summer season. Made from high-quality soft cotton, this fabric ensures a cool and soothing experience, even in the hottest weather. Its rich color adds a touch of elegance and versatility, making it perfect for creating both casual and semi-formal outfits. Ideal for those who appreciate premium fabric quality and timeless style, this unstitched piece allows you to customize your look while staying comfortable and chic all day long",
+      price: 9.33,
+      rating: 4.6,
+      category: "Cotton",
+      image: "/product5.jpeg",
+    },
+    {
+      id: 6,
+      name: "Gul Ahmed VIP Soft Cotton Unstitched Suit Men",
+      description: "Gul Ahmed Soft Cotton Unstitched fabric is designed to provide ultimate comfort and breathability for the summer season. Made from high-quality soft cotton, this fabric ensures a cool and soothing experience, even in the hottest weather. Its rich color adds a touch of elegance and versatility, making it perfect for creating both casual and semi-formal outfits. Ideal for those who appreciate premium fabric quality and timeless style, this unstitched piece allows you to customize your look while staying comfortable and chic all day long",
+      price: 9.33,
+      rating: 4.6,
+      category: "Cotton",
+      image: "/product6.jpg",
+    },
+    {
+      id: 7,
+      name: "Gul Ahmed Soft Cotton Unstitched Suit Men",
+      description: "Gul Ahmed Soft Cotton Unstitched fabric is designed to provide ultimate comfort and breathability for the summer season. Made from high-quality soft cotton, this fabric ensures a cool and soothing experience, even in the hottest weather. Its rich color adds a touch of elegance and versatility, making it perfect for creating both casual and semi-formal outfits. Ideal for those who appreciate premium fabric quality and timeless style, this unstitched piece allows you to customize your look while staying comfortable and chic all day long",
+      price: 9.33,
+      rating: 4.6,
+      category: "Cotton",
+      image: "/product7.jpg",
+    },
+    {
+      id: 8,
+      name: "ZU Khaadi Embroidered Black Daman & Dupatta",
+      description: "This exquisite piece features delicate embroidery on the front daman, paired with a vibrant black hue for a modern yet traditional look. The intricate digital net dupatta adds a touch of elegance, making it perfect for both casual and festive occasions. Crafted with attention to detail, this outfit offers comfort, style, and a perfect blend of heritage and contemporary design.",
+      price: 10.41,
+      rating: 4.6,
+      category: "Suit",
+      image: "/product8.jpg",
+    },
   ]
 
   return products.find((product) => product.id === id)

@@ -59,6 +59,42 @@ export default function ProductSection() {
       category: "Cotton",
       image: "/product4.jpg",
     },
+    {
+      id: 5,
+      name: "Gul Ahmed Soft Cotton Unstitched Suit Men",
+      description: "Gul Ahmed Soft Cotton Unstitched for a cool, summer look",
+      price: 9.33,
+      rating: 4.6,
+      category: "Cotton",
+      image: "/product5.jpeg",
+    },
+    {
+      id: 6,
+      name: "Gul Ahmed VIP Soft Cotton Unstitched Suit Men",
+      description: "Gul Ahmed Soft Cotton Unstitched for a cool, summer look",
+      price: 9.33,
+      rating: 4.6,
+      category: "Cotton",
+      image: "/product6.jpg",
+    },
+    {
+      id: 7,
+      name: "Gul Ahmed Soft Cotton Unstitched Suit Men",
+      description: "Gul Ahmed Soft Cotton Unstitched for a cool, summer look",
+      price: 9.33,
+      rating: 4.6,
+      category: "Cotton",
+      image: "/product7.jpg",
+    },
+    {
+      id: 8,
+      name: "ZU Khaadi Embroidered Black Daman & Dupatta",
+      description: "ZU Khaadi Embroidered Black Daman with Digital Dupatta for a chic, elegant look",
+      price: 10.41,
+      rating: 4.6,
+      category: "Suit",
+      image: "/product8.jpg",
+    },
   ]
 
   const handleAddToCart = (e: React.MouseEvent, product: Product) => {

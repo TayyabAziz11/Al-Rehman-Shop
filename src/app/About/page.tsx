@@ -45,7 +45,7 @@ export default function AboutPage() {
             About Us
           </h1>
           <p className="text-lg mt-4 max-w-3xl mx-auto text-gray-800 font-semibold">
-            Founded in 2015, Al Rehman Cloth House began as a small family-owned shop in Pind Dadan Khan. We are dedicated to crafting high-quality, ethically-produced clothing that merges tradition with modern elegance.
+            Founded in 2016, Al Rehman Cloth House began as a small family-owned shop in Pind Dadan Khan. We are dedicated to crafting high-quality, ethically-produced clothing that merges tradition with modern elegance.
           </p>
         </div>
       </section>

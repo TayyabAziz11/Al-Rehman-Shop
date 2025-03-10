@@ -29,7 +29,7 @@ export default function Footer() {
               Al <span className="text-[#D4A373]">Rehman</span>
             </h2>
             <p className="text-gray-600">
-              Your premier destination for modern fashion and timeless style since 1995.
+              Your premier destination for modern fashion and timeless style since 2016.
             </p>
             <div className="flex space-x-4 pt-2">
               <a href="#" className="hover:text-[#c70039] transition"><Facebook size={22} /></a>
