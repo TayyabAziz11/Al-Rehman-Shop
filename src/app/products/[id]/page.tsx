@@ -61,7 +61,7 @@ export default function ProductDetail() {
   // Check if product is already in cart and set initial quantity
   useEffect(() => {
     if (product) {
-      const cartItem = cartItems.find((item: { id: any }) => item.id === product.id)
+      const cartItem = cartItems.find((item: Product) => item.id === product.id) // Changed from 'any' to 'Product'
       if (cartItem && cartItem.quantity) {
         setQuantity(cartItem.quantity)
       } else {
@@ -90,7 +90,7 @@ export default function ProductDetail() {
     )
   }
 
-  const isInCart = cartItems.some((item: { id: any }) => item.id === product.id)
+  const isInCart = cartItems.some((item: Product) => item.id === product.id) // Changed from 'any' to 'Product'
 
   const handleAddToCart = () => {
     if (isInCart) {
@@ -254,4 +254,3 @@ export default function ProductDetail() {
     </div>
   )
 }
-
