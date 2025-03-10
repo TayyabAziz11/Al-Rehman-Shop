@@ -12,13 +12,13 @@ export default function AboutPage() {
     {
       name: "Haseeb ur Rehman",
       role: "Founder & CEO",
-      image: "/bg-image2.jpg",
+      image: "/haseeburrehman.jpg",
       social: { linkedin: "#", twitter: "#", instagram: "#" },
     },
     {
       name: "Aneeb ur Rehman",
       role: "Creative Director",
-      image: "/bg-image2.jpg",
+      image: "/aneeburrehman.jpg",
       social: { linkedin: "#", twitter: "#", instagram: "#" },
     },
   ];
@@ -62,12 +62,12 @@ export default function AboutPage() {
                 <Image
                   src={member.image}
                   alt={member.name}
-                  width={160}
-                  height={160}
-                  className="w-40 h-40 object-cover rounded-full mx-auto"
+                  width={1600}
+                  height={1600}
+                  className="w-46 h-65 object-cover rounded-full mx-auto"
                 />
-                <h3 className="text-xl font-semibold mt-4" style={{ color: colors.primary }}>{member.name}</h3>
-                <p className="text-sm mt-1" style={{ color: colors.accent }}>{member.role}</p>
+                <h3 className="text-2xl font-semibold mt-4" style={{ color: colors.primary }}>{member.name}</h3>
+                <p className="text-lg mt-1" style={{ color: colors.accent }}>{member.role}</p>
                 <div className="flex justify-center mt-3 space-x-4">
                   <a href={member.social.linkedin} className="text-gray-500 hover:text-accent"><Linkedin size={20} /></a>
                   <a href={member.social.twitter} className="text-gray-500 hover:text-accent"><Twitter size={20} /></a>

@@ -26,8 +26,8 @@ export default function ContactPage() {
             {[
               { icon: MapPin, title: "Our Location", text: "Main Sarafa Bazar, Near Main Gate, Pind Dadan Khan, Pakistan" },
               { icon: Phone, title: "Phone", text: "+92 3490530230 \n+92 3472708509 \n+92 3415407032" },
-              { icon: Mail, title: "Email", text: "info@alrehman.com" },
-              { icon: Clock, title: "Business Hours", text: "Monday - Saturday: 10:00 AM - 8:00 PM\nSunday: 12:00 PM - 6:00 PM" },
+              { icon: Mail, title: "Email", text: "Rajaaneeburrehman42@gmail.com" },
+              { icon: Clock, title: "Business Hours", text: "Monday - Sunday : 09:00 AM - 8:00 PM\nFriday : 09:00 PM - 1:00 PM" },
             ].map(({ icon: Icon, title, text }, index) => (
               <div key={index} className="flex items-start">
                 <Icon className="text-gold mt-1 mr-4" size={24} />

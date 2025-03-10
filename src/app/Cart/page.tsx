@@ -12,9 +12,17 @@ const colors = {
   text: "#222222", // Standard text color
 }
 
+// Define the conversion rate
+const USD_TO_PKR_RATE = 278.5 // Example conversion rate (1 USD = 278.5 PKR)
+
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart()
   const cartTotal = getCartTotal()
+
+  // Convert USD to PKR
+  const convertToPKR = (usdPrice: number) => {
+    return Math.round(usdPrice * USD_TO_PKR_RATE)
+  }
 
   // Empty cart state
   if (cartItems.length === 0) {
@@ -79,10 +87,12 @@ export default function CartPage() {
                             {item.name}
                           </h3>
                           <p className="font-medium" style={{ color: colors.primary }}>
-                            ${(item.price * (item.quantity || 1)).toFixed(2)}
+                            PKR {convertToPKR(item.price * (item.quantity || 1)).toLocaleString()}
                           </p>
                         </div>
-                        <p className="mt-1 text-sm text-gray-500">${item.price.toFixed(2)} each</p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          PKR {convertToPKR(item.price).toLocaleString()} each
+                        </p>
 
                         {/* Quantity Controls */}
                         <div className="mt-4 flex items-center justify-between">
@@ -131,7 +141,7 @@ export default function CartPage() {
                     Subtotal
                   </span>
                   <span className="font-medium" style={{ color: colors.primary }}>
-                    ${cartTotal.toFixed(2)}
+                    PKR {convertToPKR(cartTotal).toLocaleString()}
                   </span>
                 </div>
 
@@ -145,7 +155,7 @@ export default function CartPage() {
                     Total
                   </span>
                   <span className="text-lg font-bold" style={{ color: colors.accent }}>
-                    ${cartTotal.toFixed(2)}
+                    PKR {convertToPKR(cartTotal).toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -172,3 +182,4 @@ export default function CartPage() {
     </div>
   )
 }
+

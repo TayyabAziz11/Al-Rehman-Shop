@@ -55,26 +55,28 @@ export default function Footer() {
             <h3 className="text-xl font-semibold text-[#D4A373]">Contact Us</h3>
             <ul className="space-y-3 text-lg">
               <li className="flex items-start">
-                <MapPin size={20} className="mr-3 text-[#ff5733]" />
-                <span className="text-gray-600">123 Fashion Street, Textile City, Pakistan</span>
+                <MapPin size={20} className="mr-3 text-[#D4A373]" />
+                <span className="text-gray-600">Main Sarafa Bazar, Near Main Gate, Pind Dadan Khan, Pakistan</span>
               </li>
               <li className="flex items-center">
-                <Phone size={20} className="mr-3 text-[#ff5733]" />
+                <Phone size={20} className="mr-3 text-[#D4A373]" />
                 <a href="tel:+923001234567" className="text-gray-600 hover:text-[#D4A373]">
-                  +92 300 123 4567
+                +92 3490530230  <br />
+                +92 3472708509  <br />
+                +92 3415407032
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail size={20} className="mr-3 text-[#ff5733]" />
+                <Mail size={20} className="mr-3 text-[#D4A373]" />
                 <a href="mailto:info@alrehman.com" className="text-gray-600 hover:text-[#D4A373]">
-                  info@alrehman.com
+                   Rajaaneeburrehman42@gmail.com
                 </a>
               </li>
             </ul>
             <div className="pt-2">
-              <h4 className="text-lg font-medium text-[#ff5733] mb-2">Business Hours</h4>
-              <p className="text-gray-600">Monday - Saturday: 10:00 AM - 8:00 PM</p>
-              <p className="text-gray-600">Sunday: 12:00 PM - 6:00 PM</p>
+              <h4 className="text-lg font-medium text-[#D4A373] mb-2">Business Hours</h4>
+              <p className="text-gray-600">Monday - Sunday : 09:00 AM - 8:00 PM</p>
+              <p className="text-gray-600">Friday : 09:00 PM - 1:00 PM</p>
             </div>
           </div>
         </div>

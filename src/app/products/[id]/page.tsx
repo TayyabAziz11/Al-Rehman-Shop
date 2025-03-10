@@ -19,23 +19,41 @@ const getProductData = (id: number): Product | undefined => {
   const products: Product[] = [
     {
       id: 1,
-      name: "Classic Cotton T-Shirt",
+      name: "ZU Khaadi Embroidered Blue Daman & Dupatta",
       description:
-        "Premium cotton essential tee for everyday comfort. Made with 100% organic cotton, this t-shirt offers breathable comfort for all-day wear. The classic fit and durable construction ensure it will be a staple in your wardrobe for years to come.",
-      price: 29.99,
-      rating: 4.8,
-      category: "t-shirts",
-      image: "/bg-image2.jpg",
+        "This exquisite piece features delicate embroidery on the front daman, paired with a vibrant blue hue for a modern yet traditional look. The intricate digital net dupatta adds a touch of elegance, making it perfect for both casual and festive occasions. Crafted with attention to detail, this outfit offers comfort, style, and a perfect blend of heritage and contemporary design.",
+      price: 10.41,
+      rating: 4.5,
+      category: "Suit",
+      image: "/product1.jpg",
     },
     {
       id: 2,
-      name: "Slim Fit Denim Jeans",
+      name: "ZU Khaadi Embroidered Green Daman & Dupatta",
       description:
-        "Stylish dark wash jeans with perfect stretch. These premium denim jeans feature a modern slim fit with just the right amount of stretch for comfort. The dark wash is versatile enough for both casual and semi-formal occasions, making these jeans an essential addition to any wardrobe.",
-      price: 59.99,
+        "This exquisite piece features delicate embroidery on the front daman, paired with a vibrant green hue for a modern yet traditional look. The intricate digital net dupatta adds a touch of elegance, making it perfect for both casual and festive occasions. Crafted with attention to detail, this outfit offers comfort, style, and a perfect blend of heritage and contemporary design.",
+      price: 10.41,
       rating: 4.6,
-      category: "bottoms",
-      image: "/bg-image2.jpg",
+      category: "Suit",
+      image: "/product2.jpg",
+    },
+    {
+      id: 3,
+      name: "Gul Ahmed Soft Cotton Black",
+      description: "Gul Ahmed Soft Cotton Black Unstitched fabric is designed to provide ultimate comfort and breathability for the summer season. Made from high-quality soft cotton, this fabric ensures a cool and soothing experience, even in the hottest weather. Its rich black color adds a touch of elegance and versatility, making it perfect for creating both casual and semi-formal outfits. Ideal for those who appreciate premium fabric quality and timeless style, this unstitched piece allows you to customize your look while staying comfortable and chic all day long",
+      price: 9.33,
+      rating: 4.8,
+      category: "Cotton",
+      image: "/product3.jpg",
+    },
+    {
+      id: 4,
+      name: "Gul Ahmed Soft Cotton Tea Pink",
+      description: "Gul Ahmed Soft Cotton Tea Pink Unstitched fabric is designed to provide ultimate comfort and breathability for the summer season. Made from high-quality soft cotton, this fabric ensures a cool and soothing experience, even in the hottest weather. Its rich Tea Pink color adds a touch of elegance and versatility, making it perfect for creating both casual and semi-formal outfits. Ideal for those who appreciate premium fabric quality and timeless style, this unstitched piece allows you to customize your look while staying comfortable and chic all day long",
+      price: 9.33,
+      rating: 4.8,
+      category: "Cotton",
+      image: "/product4.jpg",
     },
   ]
 
@@ -137,7 +155,7 @@ export default function ProductDetail() {
             <Image
               src={product.image || "/placeholder.svg"}
               alt={product.name}
-              width={600}
+              width={1000}
               height={600}
               className="w-full h-auto object-cover"
             />
@@ -243,9 +261,7 @@ export default function ProductDetail() {
                 <li className="mb-1">Category: {product.category}</li>
                 <li className="mb-1">Material: Premium Quality</li>
                 <li className="mb-1">Available in multiple colors</li>
-                <li className="mb-1">
-                  Free shipping on orders over PKR {Math.round(50 * USD_TO_PKR_RATE).toLocaleString()}
-                </li>
+                
               </ul>
             </div>
           </div>
